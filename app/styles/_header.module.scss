@@ -1,0 +1,13 @@
+.header_nav_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+  //height: 5em;
+  border: solid 2px rgb(62, 38, 38);
+
+  .header_div {
+    border: solid 2px rgb(223, 122, 122);
+    padding: 1em;
+  }
+}
