@@ -13,6 +13,9 @@ const Header = () => {
           <Link href="/ideas">ideas</Link>
         </div>
         <div className={style.header_div}>
+          <Link href="/newidea">News idea</Link>
+        </div>
+        <div className={style.header_div}>
           <Link href="/register">register</Link>
         </div>
       </nav>

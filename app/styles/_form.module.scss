@@ -1,0 +1,82 @@
+.form_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  max-width: 700px;
+  border: solid 2px black;
+  height: 80vh;
+  padding: 5em;
+  .messageBackend_Form {
+    background-color: rgb(216, 42, 42);
+    color: white;
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 15px;
+    margin-top: 1em;
+  }
+  .messageBackend_Form_ok {
+    background-color: rgb(37, 198, 37);
+    color: white;
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 15px;
+    margin-top: 1em;
+  }
+
+  .form_h3 {
+    border: solid 2px black;
+    text-align: center;
+    width: 100%;
+  }
+  .form_form {
+    display: flex;
+    margin: auto;
+    gap: 2em;
+    flex-direction: column;
+    justify-content: center;
+    //  border: solid 2px rgb(220, 33, 33);
+    align-items: self-start;
+    width: 80%;
+    height: 80%;
+    & label {
+      font-size: large;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+    }
+    .form_input {
+      width: 30em;
+      padding: 1em;
+      cursor: pointer;
+    }
+    .passEye {
+      display: flex;
+      justify-content: space-around;
+      //  border: solid 1px red;
+      align-items: center;
+      gap: 1em;
+      height: 2em;
+      font-size: 1.3em;
+      cursor: pointer;
+    }
+    .form_textarea {
+      padding-bottom: 1em;
+      width: 30em;
+    }
+    .form_input_submit {
+      border: none;
+      padding-bottom: 1em;
+      width: 30em;
+      padding: 1em;
+      letter-spacing: 1em;
+      font-weight: 700;
+      cursor: pointer;
+      background-color: rgb(226, 20, 20);
+      color: white;
+    }
+    .form_input_submit:hover {
+      transform: scale(1.02);
+    }
+  }
+}

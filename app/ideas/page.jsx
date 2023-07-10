@@ -6,6 +6,8 @@ import Idea from "../components/Idea";
 const fetchIdeas = async () => {
   const res = await fetch("http://localhost:3000/api/ideas");
   const ideas = await res.json();
+  //si dessous ralentissement pour voir le spinner loading...sans passer par l'inspecteur google
+  // await new Promise((resolve) => setTimeout(() => resolve(), 2000));
   return ideas;
 };
 const ideas = async () => {

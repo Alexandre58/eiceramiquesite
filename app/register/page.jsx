@@ -1,10 +1,12 @@
 import React from "react";
 import style from "../styles/index.module.scss";
+import RegisterForm from "../components/RegisterForm";
 
-const register = () => {
+const register = (data) => {
   return (
     <main className={style.main_container}>
-      <h1>Bonjour register</h1>
+      <h1>S'enregistrer</h1>
+      <RegisterForm />
     </main>
   );
 };
