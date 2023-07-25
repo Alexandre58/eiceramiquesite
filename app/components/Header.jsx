@@ -1,23 +1,35 @@
-import React from "react";
+"use client";
+import React, { useContext } from "react";
 import Link from "next/link";
-import style from "../styles/index.module.scss";
+import style from "../styles/_header.module.scss";
+import User from "./User";
+import { AuthContext } from "../context/AuthContextProvider";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
   return (
     <header>
       <nav className={style.header_nav_container}>
-        <div className={style.header_div}>
-          <Link href="/">Accueil</Link>
-        </div>
-        <div className={style.header_div}>
-          <Link href="/ideas">ideas</Link>
-        </div>
-        <div className={style.header_div}>
-          <Link href="/newidea">News idea</Link>
-        </div>
-        <div className={style.header_div}>
-          <Link href="/register">register</Link>
-        </div>
+        <Link className={style.header_div} href="/">
+          Accueil
+        </Link>
+
+        <Link className={style.header_div} href="/ideas">
+          ideas
+        </Link>
+
+        <Link className={style.header_div} href="/newidea">
+          News idea
+        </Link>
+
+        {!user ? (
+          <Link className={style.header_div} href="/register">
+            Connection
+          </Link>
+        ) : (
+          ""
+        )}
+        <User />
       </nav>
     </header>
   );

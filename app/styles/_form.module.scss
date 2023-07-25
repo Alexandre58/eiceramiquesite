@@ -5,9 +5,10 @@
   align-items: center;
   margin: auto;
   max-width: 700px;
-  border: solid 2px black;
+  //border: solid 2px black;
   height: 80vh;
   padding: 5em;
+  gap: 2em;
   .messageBackend_Form {
     background-color: rgb(216, 42, 42);
     color: white;
@@ -23,13 +24,36 @@
     padding: 1em;
     border-radius: 15px;
     margin-top: 1em;
+    width: 100%;
+    text-align: center;
   }
 
   .form_h3 {
-    border: solid 2px black;
+    border: solid 1px black;
     text-align: center;
     width: 100%;
+    padding: 1em;
+    letter-spacing: 0.6em;
   }
+  .form_compte_login {
+    color: red;
+    padding: 1em;
+    font-size: 1em;
+
+    & a {
+      border: solid 1px black;
+      padding: 0.5em;
+      cursor: pointer;
+      border-radius: 15px;
+      background-color: bisque;
+      color: rgb(36, 30, 30);
+      font-weight: 700;
+    }
+    & a:hover {
+      transform: scale(1);
+    }
+  }
+
   .form_form {
     display: flex;
     margin: auto;

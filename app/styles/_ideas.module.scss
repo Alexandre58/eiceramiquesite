@@ -1,3 +1,5 @@
+@import "../styles/variables.module";
+
 .main_ideas_container {
   display: flex;
   flex-direction: column;
@@ -10,7 +12,183 @@
   margin: auto;
   gap: 1em;
   margin-bottom: 10em;
-
+  /*LOADING ideas*/
+  .loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(14, 13, 13);
+    /*loader on/off*/
+    visibility: hidden;
+    z-index: 0;
+    opacity: 0;
+    animation: loaderStop 3000ms;
+    @keyframes loaderStop {
+      0% {
+        visibility: visible;
+        z-index: 15;
+        opacity: 1;
+      }
+      50% {
+        z-index: 15;
+        opacity: 1;
+      }
+      99% {
+        z-index: 15;
+        opacity: 0.9;
+      }
+      100% {
+        visibility: hidden;
+        z-index: 0;
+        opacity: 0;
+      }
+    }
+    .container__animation {
+      display: flex;
+      column-gap: 10px;
+      justify-content: center;
+      align-items: flex-end;
+      align-items: center;
+      width: 100%;
+      height: 90px;
+      margin: 0 auto;
+      padding: 0;
+      .animation__o {
+        border-radius: 50px;
+        width: 70px;
+        height: 71px;
+        margin-right: 0px;
+        animation: bigCircle 1s linear infinite alternate,
+          rotateCircle 3s linear infinite;
+      }
+      @keyframes bigCircle {
+        from {
+          box-shadow: 0 0 5px $primaire, 0 5px 5px $secondaire,
+            5px 0 5px $tertiaire, 0 0 5px whitesmoke;
+        }
+        to {
+          box-shadow: 0 -5px 5px $primaire, -5px 0 5px $secondaire,
+            0 5px 5px $tertiaire, -5px 0 5px whitesmoke;
+        }
+      }
+      @keyframes rotateCircle {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes appearance {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      /*Appearance loader letter*/
+      @for $i from 1 through 7 {
+        #loader__li_#{$i} {
+          animation-delay: $i * 300ms;
+        }
+      }
+      .loader__ul {
+        display: flex;
+        align-self: flex-end;
+        align-items: flex-end;
+        .loader__li {
+          color: $tertiaire;
+          font-size: 1rem;
+          padding: 0px 5px;
+          animation-name: appearance;
+          animation-duration: 3000ms;
+          animation-delay: 0ms;
+          opacity: 0;
+        }
+        .loader__li:not(#loader__li_1) {
+          padding-bottom: 4px;
+        }
+        #loader__li_1 {
+          font-size: 2rem;
+          margin-right: 5px;
+          padding: 0;
+          color: $primaire;
+          text-transform: capitalize;
+        }
+      }
+    }
+    /*PLATE ANIMATION*/
+    .underline__loader {
+      position: absolute;
+      top: 63%;
+      border-radius: 0 0px 200px 200px;
+      width: 0px;
+      height: 10px;
+      border: transparent solid 2px;
+      opacity: 0;
+      box-shadow: 0 0 5px $primaire, 0 5px 5px $secondaire, 5px 0 5px $tertiaire,
+        0 0 5px whitesmoke;
+      animation: widthPlate 4000ms;
+    }
+    @keyframes widthPlate {
+      0% {
+        opacity: 1;
+        width: 50px;
+        height: 80px;
+      }
+      13% {
+        width: 50px;
+        height: 80px;
+      }
+      36% {
+        width: 150px;
+        height: 70px;
+      }
+      65% {
+        height: 15px;
+        width: 200px;
+        opacity: 1;
+      }
+      100% {
+        height: 15px;
+        width: 200px;
+        opacity: 0;
+      }
+    }
+    .underline__loader__hot {
+      border-top: solid rgba(255, 255, 255, 0.089) 1px;
+      position: absolute;
+      top: 62%;
+      width: 0px;
+      animation: widthPlateHot 7000ms, rotateHot 2000ms linear infinite;
+    }
+    @keyframes widthPlateHot {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 270px;
+      }
+    }
+    @keyframes rotateHot {
+      0% {
+        box-shadow: 15px 5px 5px $primaire, 0 10px 15px $secondaire,
+          15px 5px 15px $tertiaire, 0 10px 15px whitesmoke;
+      }
+      90% {
+        box-shadow: 0 60px 10px $primaire, 15px 0px 15px $secondaire,
+          0px 15px 10px $tertiaire, 15px 0px 15px whitesmoke;
+      }
+      100% {
+        top: 58%;
+      }
+    }
+  }
+  //fin loading
   .main_ideas_div {
     display: flex;
     flex-direction: column;

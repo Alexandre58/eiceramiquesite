@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../styles/index.module.scss";
+import style from "../styles/_ideas.module.scss";
 
 const Idea = ({ data }) => {
   const { id, title, description } = data;
