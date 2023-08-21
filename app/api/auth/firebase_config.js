@@ -5,13 +5,14 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+//les clés de .env sont dans le fichier next.config.js
 export const firebaseConfig = {
-  apiKey: "AIzaSyBtl4Ldjy6nJSCMaQiE_jfeYNm0LcAnmKI",
-  authDomain: "eiceramiquesite.firebaseapp.com",
-  projectId: "eiceramiquesite",
-  storageBucket: "eiceramiquesite.appspot.com",
-  messagingSenderId: "604614680037",
-  appId: "1:604614680037:web:ee143466687ce3eaf4230c",
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId,
 };
 
 // Initialize Firebase
